@@ -1,0 +1,72 @@
+[
+  {
+    "type": "mcq",
+    "topic": "Abstract/Executive Summary",
+    "options": [
+      "To provide a detailed introduction to the research",
+      "To summarize the research methodology",
+      "To provide a brief overview of the proposal",
+      "To discuss the research findings in detail"
+    ],
+    "answer": "To provide a brief overview of the proposal",
+    "question": "What is the primary purpose of an abstract in a research proposal?",
+    "marks": 1,
+    "explanation": "An abstract is a brief summary that helps reviewers quickly understand the proposal."
+  },
+  {
+    "type": "mcq",
+    "topic": "Abstract/Executive Summary",
+    "options": [
+      "100-250 words",
+      "250-350 words",
+      "350-500 words",
+      "500-750 words"
+    ],
+    "answer": "100-250 words",
+    "question": "What is the typical word limit for an abstract in a journal article?",
+    "marks": 1,
+    "explanation": "The abstract should be a short summary, typically 100-250 words for journal articles."
+  },
+  {
+    "type": "mcq",
+    "topic": "Front Matter",
+    "options": [
+      "Introduction, literature review, and methodology",
+      "Title page, signature page, and abstract",
+      "Results, discussion, and conclusion",
+      "References, appendices, and index"
+    ],
+    "answer": "Title page, signature page, and abstract",
+    "question": "What is included in the front matter of a research document?",
+    "marks": 1,
+    "explanation": "The front matter includes the title page, signature page, and abstract."
+  },
+  {
+    "type": "mcq",
+    "topic": "Front Matter",
+    "options": [
+      "To provide a list of references",
+      "To acknowledge the contributions of others",
+      "To contain signatures from the faculty advisor and committee members",
+      "To provide a summary of the research findings"
+    ],
+    "answer": "To contain signatures from the faculty advisor and committee members",
+    "question": "What is the purpose of a signature page in a thesis or dissertation?",
+    "marks": 1,
+    "explanation": "The signature page contains signatures from the faculty advisor and committee members."
+  },
+  {
+    "type": "mcq",
+    "topic": "Abstract/Executive Summary",
+    "options": [
+      "A detailed introduction to the research",
+      "A preview and attract interest",
+      "A summary of the research methodology",
+      "A discussion of the research findings"
+    ],
+    "answer": "A preview and attract interest",
+    "question": "What should an abstract serve as, according to the text?",
+    "marks": 1,
+    "explanation": "The abstract should serve as a preview and attract interest."
+  }
+]
