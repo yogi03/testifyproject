@@ -2,6 +2,7 @@ import os
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 from api import auth, upload, test_generation, evaluation, analytics, deletion
 
 app = FastAPI(title="TESTIFY Backend API")
@@ -26,3 +27,8 @@ app.include_router(deletion.router)
 @app.get("/")
 def read_root():
     return {"message": "Welcome to TESTIFY API"}
+
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 5000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
