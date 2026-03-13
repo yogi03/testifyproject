@@ -3,9 +3,6 @@ from pydantic import BaseModel
 from typing import List, Optional
 import uuid
 from datetime import datetime
-from services.quiz_generator import generate_quiz
-from services.notes_generator import generate_study_notes
-from services.mindmap_generator import generate_mindmap_data, is_placeholder_mindmap_data, is_valid_mindmap_data, normalize_mindmap_data
 from database.firestore import get_db
 from services.topic_progress import build_topic_plan
 
@@ -22,6 +19,8 @@ class TestRequest(BaseModel):
 @router.post("/generate")
 async def create_test(req: TestRequest):
     try:
+        from services.quiz_generator import generate_quiz
+
         db = get_db()
         topic_outline = []
         if db:
@@ -73,6 +72,8 @@ async def get_document_topics(doc_id: str):
 @router.post("/notes")
 async def get_notes(req: TestRequest):
     try:
+        from services.notes_generator import generate_study_notes
+
         notes = generate_study_notes(req.doc_id, req.topics or [])
         return {"notes": notes}
     except Exception as e:
@@ -81,6 +82,13 @@ async def get_notes(req: TestRequest):
 @router.post("/mindmap")
 async def get_mindmap(req: TestRequest):
     try:
+        from services.mindmap_generator import (
+            generate_mindmap_data,
+            is_placeholder_mindmap_data,
+            is_valid_mindmap_data,
+            normalize_mindmap_data,
+        )
+
         db = get_db()
         source_document = {}
         topic_outline = []

@@ -1,11 +1,8 @@
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
-from typing import Optional
 import os
 import uuid
 import shutil
 from database.firestore import get_db
-from rag.ingest import ingest_pdf, ingest_url
-from services.topic_outline_generator import generate_topic_outline
 
 router = APIRouter(prefix="/api/upload", tags=["Upload"])
 
@@ -18,6 +15,9 @@ async def upload_pdf(file: UploadFile = File(...), user_id: str = Form(...)):
     temp_file_path = f"temp_{doc_id}.pdf"
     
     try:
+        from rag.ingest import ingest_pdf
+        from services.topic_outline_generator import generate_topic_outline
+
         with open(temp_file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
             
@@ -48,6 +48,9 @@ async def upload_pdf(file: UploadFile = File(...), user_id: str = Form(...)):
 
 @router.post("/url")
 async def upload_url(url: str = Form(...), user_id: str = Form(...)):
+    from rag.ingest import ingest_url
+    from services.topic_outline_generator import generate_topic_outline
+
     doc_id = str(uuid.uuid4())
     title, chunks = ingest_url(url, doc_id, user_id)
     topic_outline = generate_topic_outline(doc_id)

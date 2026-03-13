@@ -3,7 +3,6 @@ from pydantic import BaseModel
 from typing import Dict, Any
 import uuid
 from datetime import datetime
-from services.evaluator import grade_test
 from database.firestore import get_db
 from services.topic_progress import calculate_attempt_topic_performance
 
@@ -16,6 +15,8 @@ class EvaluationRequest(BaseModel):
 
 @router.post("/submit")
 async def submit_test(req: EvaluationRequest):
+    from services.evaluator import grade_test
+
     db = get_db()
     if not db:
         return {"message": "Test evaluated (No DB)", "score": 0}
