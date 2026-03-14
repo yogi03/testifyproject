@@ -39,7 +39,7 @@ jobs:
         with:
           name: python-app
           path: |
-            backend
+            backend/*
             !backend/antenv/
 
       # 🚫 Opting Out of Oryx Build
@@ -74,5 +74,5 @@ jobs:
         with:
           app-name: 'testify-backend'
           slot-name: 'Production'
-          package: backend
+          package: .
           
